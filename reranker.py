@@ -13,7 +13,7 @@ def rerank_pinecone_matches(query: str, pinecone_matches: list, top_n: int = 3) 
     """
     # 1. Safety check: Did Pinecone find anything?
     if not pinecone_matches:
-        return ""
+        return "pine cone donot match"
 
     # 2. Extract just the text strings for Cohere to read
     docs_to_rerank = [match['metadata'].get('text', '') for match in pinecone_matches]
